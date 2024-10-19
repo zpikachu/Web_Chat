@@ -9,13 +9,7 @@ import 'dotenv/config';
 const port = process.env.PORT;
 const app = express();
 app.use(express.json());
-// app.use(cors());
-const allowedOrigins = ['https://web-chat-1-1tia.onrender.com'];
-app.use(cors({
-    origin: allowedOrigins,
-    methods: ['GET', 'POST'],
-    credentials: true, // If you need to include credentials
-}));
+app.use(cors());
 const server = createServer(app);
 
 //Establidh api
