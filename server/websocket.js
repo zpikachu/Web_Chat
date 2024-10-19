@@ -4,7 +4,7 @@ import messageModel from './models/message_schema.js';
 const websocket = (server) => {
     const io = new Server(server, {
         cors: {
-            origin: 'http://localhost:5173',
+            origin: FRONTEND_URI,
             methods: ['GET', 'POST'],
             credentials: true,
         }
