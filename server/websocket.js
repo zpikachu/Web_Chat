@@ -4,7 +4,7 @@ import messageModel from './models/message_schema.js';
 const websocket = (server) => {
     const io = new Server(server, {
         cors: {
-            origin: FRONTEND_URI,
+            origin: 'https://web-chat-1-1tia.onrender.com/',
             methods: ['GET', 'POST'],
             credentials: true,
         }
