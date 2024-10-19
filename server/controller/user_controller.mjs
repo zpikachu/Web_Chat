@@ -1,6 +1,6 @@
 import user_schema from "../models/user_schema.mjs";
 import TempUser from "../models/tempUser_schema.mjs";
-import bcrypt from 'bcrypt';
+// import bcrypt from 'bcrypt';
 import { sendOTP } from '../nodemailer.mjs';
 import generateOTP from 'otp-generator';
 
@@ -13,12 +13,13 @@ export const Register = async (req, res) => {
       // Generate OTP
       const otp = generateOTP.generate(4, { digits: true, upperCaseAlphabets: false, specialChars: false, lowerCaseAlphabets: false });
 
-      const hashedPassword = await bcrypt.hash(password, 10);
+      // const hashedPassword = await bcrypt.hash(password, 10);
 
       const newUser = new TempUser({
         email,
         username,
-        password: hashedPassword,
+        // hashedPassword
+        password: password,
         profile: `https://avatar.iran.liara.run/username?username=${username}`,
         otp
       });
@@ -85,7 +86,8 @@ export const Login = async (req, res) => {
       console.log("User not found!");
       res.json({ message: "Username or Password Invalid!" });
     } else {
-      let checkPassword = await bcrypt.compare(password, user.password);
+      // bcrypt.compare(password, user.password);
+      let checkPassword = await user.password;
       if (!checkPassword) {
         console.log("Invalid Password!");
         res.json({ message: "Username or Password Invalid!" });
