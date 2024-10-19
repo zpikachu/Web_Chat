@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("../src/assets/fonts/Pacifico.ttf");
+}
+
+@font-face {
+  font-family: "yack";
+  src: url("../src/assets/fonts/Yackien.ttf");
+}
+@font-face {
+  font-family: "silva";
+  src: url("../src/assets/fonts/Anderson-Silva.ttf");
+}
+@font-face {
+  font-family: "swash";
+  src: url("../src/assets/fonts/Yackien-Swash.ttf");
+}
+@font-face {
+  font-family: "logo";
+  src: url(../src/assets/fonts/Fontspring-DEMO-blue_vinyl_bold_ps_ot.otf);
+}
+
+.input-field {
+  display: block;
+  border: none;
+  height: 33px;
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 16.5px;
+  padding: 0 16px;
+  margin-top: 1.34px;
+  font-size: 12px;
+  font-weight: 200;
+  margin-bottom: 10.68px;
+}
+
+.input-field:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  ); /* Change background color on hover */
+}
+
+.button {
+  width: 70%;
+  background-color: #1976d2;
+  border: none;
+  color: #080710;
+  padding: 10px 0;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 16.5px;
+  cursor: pointer;
+  margin-top: 24.12px;
+  margin-bottom: 6.67px;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #03bcf4; /* Change to a darker shade of blue */
+  box-shadow:0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4; /* Add a glowing effect */
+}
+
+.form-container {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  border-radius: 3.35px;
+  transform: translateY(-50%);
+  width: 400px;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  padding: 33.34px 46.67px;
+  font-size: 13.33px;
+}
+
+.label {
+  padding-left: 16px;
+  color: whitesmoke;
+}
+
+.heading {
+  font-family: "MyFont";
+  font-size: 45px;
+  /* color: #1976d2;
+  text-shadow: 0 0 10px rgba(25, 118, 210, 0.8); */
+  animation: animate 5s linear infinite;
+}
+@keyframes animate {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4,
+      0 0 80px #03bcf4, 0 0 160px #03bcf4;
+  }
+}
+
+.link {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #03bcf4;
+  text-decoration: none; /* or any other hover effect you prefer */
+ /* Multiple shadows to create a glow effect */
+}
+
+
+.hometitle {
+  font-family: "logo";
+  font-size: 145px;
+  color: #fff;
+}
+
+/* Preloader container */
+.preloader {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 55;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Texts container within the preloader */
+.preloader .texts-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 280px;
+  font-size: 20px;
+  font-weight: 800;
+  overflow: hidden;
+  color: #fff; /* Text color */
+}
