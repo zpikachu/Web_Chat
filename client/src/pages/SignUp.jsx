@@ -29,7 +29,7 @@ const SignUp = () => {
       if (verificationInProgress) {
         event.preventDefault();
         axios
-          .post("http://localhost:3000/api/user/delete", {
+          .post(`${import.meta.env.VITE_API}/api/user/delete`, {
             email: userInfo.email,
           })
           .then((response) => {
@@ -56,7 +56,7 @@ const SignUp = () => {
   const handleSendOtp = () => {
     if (!validateInput()) return;
     axios
-      .post("http://localhost:3000/api/user/register", userInfo)
+      .post(`${import.meta.env.VITE_API}/api/user/register`, userInfo)
       .then(async (response) => {
         if (!response.data.success) toast.error(response.data.message);
         else {
@@ -72,7 +72,7 @@ const SignUp = () => {
 
   const handleVerify = () => {
     axios
-      .post("http://localhost:3000/api/user/verify", {
+      .post(`${import.meta.env.VITE_API}/api/user/verify`, {
         otp,
         email: userInfo.email,
       })

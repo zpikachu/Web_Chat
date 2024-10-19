@@ -30,10 +30,10 @@ export default function SignInSide() {
       return;
     }
     axios
-      .post("http://localhost:3000/api/user/login", userInfo)
+      .post(`${import.meta.env.VITE_API}/api/user/login`, userInfo)
       .then(async (response) => {
         if (response.data.success) {
-          toast.success(response.data.message);
+          toast.success(response.data.message)
           setTimeout(()=>{
           navigate("/chat", { state: response.data.user });
             },3000)

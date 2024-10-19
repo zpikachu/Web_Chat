@@ -9,7 +9,7 @@ import Mainbar from "../components/chat/Mainbar";
 import SendMessageForm from "../components/chat/SendMessageForm";
 import NotFoundPage from "./NotFoundPage";
 
-const socket = io("http://localhost:3000");
+const socket = io(import.meta.env.VITE_API);
 
 const Chat = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Chat = () => {
 
   const logout = (userId) => {
     axios
-      .post("http://localhost:3000/api/user/logout", { user_id: userId })
+      .post(`${import.meta.env.VITE_API}/api/user/logout`, { user_id: userId })
       .then((response) => {
         console.log(response.data.message);
       })
@@ -52,7 +52,7 @@ const Chat = () => {
   useEffect(() => {
     socket.emit("Join", user?.room_id, user?.username);
     axios
-      .post("http://localhost:3000/api/message/getmessage", {
+      .post(`${import.meta.env.VITE_API}/api/message/getmessage`, {
         room_id: user?.room_id,
       })
       .then((response) => {
@@ -75,7 +75,7 @@ const Chat = () => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:3000/api/user/getall", { room_id: user?.room_id })
+      .post(`${import.meta.env.VITE_API}/api/user/getall`, { room_id: user?.room_id })
       .then((response) => {
         if (response.data.users) {
           setUsers(response.data.users);
