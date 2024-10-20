@@ -4,7 +4,7 @@ import 'dotenv/config';
 const websocket = (server) => {
     const io = new Server(server, {
         cors: {
-            origin: web-chat-frontend-pbl16prst-muzaifs-projects.vercel.app,
+            origin: "web-chat-frontend-pbl16prst-muzaifs-projects.vercel.app",
             methods: ['GET', 'POST'],
             credentials: true,
         }
