@@ -9,7 +9,7 @@ import Mainbar from "../components/chat/Mainbar";
 import SendMessageForm from "../components/chat/SendMessageForm";
 import NotFoundPage from "./NotFoundPage";
 
-const socket = io(import.meta.env.VITE_API);
+const socket = io(`import.meta.env.VITE_API/3000`);
 
 const Chat = () => {
   const navigate = useNavigate();
