@@ -1,10 +1,10 @@
 import { Server } from 'socket.io';
 import messageModel from './models/message_schema.js';
-
+import 'dotenv/config';
 const websocket = (server) => {
     const io = new Server(server, {
         cors: {
-            origin: 'https://web-chat-wkpm.onrender.com',
+            origin: process.env.FRONTEND_URI,
             methods: ['GET', 'POST'],
             credentials: true,
         }
